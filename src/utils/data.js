@@ -39,7 +39,7 @@ export const DUMMY_USERS = [
 ];
 
 
-const DUMMY_REQUESTS = [
+export const DUMMY_REQUESTS = [
   {
     id: "req001",
     requesterId: "faculty01",
