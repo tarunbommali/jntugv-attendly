@@ -20,8 +20,7 @@ import {
   ViewRequestModal,
 } from "./components/ui/ui";
 
-import Header from "./components/Header";
-
+ 
 
 const FacultyDashboard = ({
   currentUser,
@@ -136,7 +135,7 @@ const HigherAuthorityDashboard = ({
   );
 };
 
-// --- LOGIN COMPONENT ---
+// --- LOGIN COMPONEN44T ---
 
 const LoginScreen = ({ onLogin }) => {
   const [selectedUserId, setSelectedUserId] = useState(DUMMY_USERS[0].uid);

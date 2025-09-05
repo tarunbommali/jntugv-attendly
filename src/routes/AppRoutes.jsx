@@ -1,30 +1,43 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
-import { useAppContext } from '../context/AppContext';
-import ProtectedRoute from './ProtectedRoute';
-import HomePage from '../pages/HomePage';
-import LoginPage from '../pages/Login';
-import DashboardLayout from '../pages/DashboardLayout';
-import FacultyDashboardPage from '../dashboard/FacultyDashboardPage';
+import { Routes, Route, Navigate } from "react-router-dom";
+import useAppContext from "../context/AppContext";
 
-import HigherAuthorityDashboardPage from '../dashboard/HigherAuthorityDashboardPage';
-
-import CreateUserPage from '../components/CreateUserPage';
-import NotFoundPage from '../components/NotFound';
+import LoginPage from "../pages/Login";
+import HomePage from "../pages/HomePage";
+import DashboardLayout from "../pages/DashboardLayout";
+import ProtectedRoute from "./ProtectedRoute";
+import NotFoundPage from "../components/NotFound";
+import CreateUserPage from "../components/CreateUserPage";
+import { dashboardRoutes } from "../utils/dashboardRoutes";
 
 function AppRoutes() {
-    const { currentUser } = useAppContext();
-    return (
-        <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/login" element={!currentUser ? <LoginPage /> : <Navigate to="/" />} />
-            <Route path="/dashboard/faculty" element={<ProtectedRoute role="faculty"><DashboardLayout><FacultyDashboardPage /></DashboardLayout></ProtectedRoute>} />
-            <Route path="/dashboard/hod" element={<ProtectedRoute role="hod"><DashboardLayout><HigherAuthorityDashboardPage /></DashboardLayout></ProtectedRoute>} />
-            <Route path="/dashboard/principal" element={<ProtectedRoute role="principal"><DashboardLayout><HigherAuthorityDashboardPage /></DashboardLayout></ProtectedRoute>} />
-            <Route path="/dashboard/registrar" element={<ProtectedRoute role="registrar"><DashboardLayout><HigherAuthorityDashboardPage /></DashboardLayout></ProtectedRoute>} />
-            <Route path="/dashboard/registrar/create-user" element={<ProtectedRoute role="registrar"><DashboardLayout><CreateUserPage /></DashboardLayout></ProtectedRoute>} />
-            <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-    );
+  const { currentUser } = useAppContext();
+
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route
+        path="/login"
+        element={!currentUser ? <LoginPage /> : <Navigate to="/" />}
+      />
+
+      {/* Auto-generate dashboard routes */}
+      {dashboardRoutes &&
+        dashboardRoutes.map(({ path, role, element }) => (
+          <Route
+            key={path}
+            path={path}
+            element={
+              <ProtectedRoute role={role}>
+                <DashboardLayout>{element}</DashboardLayout>
+              </ProtectedRoute>
+            }
+          />
+        ))}
+
+      {/* Fallback for unknown routes */}
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
+  );
 }
 
 export default AppRoutes;

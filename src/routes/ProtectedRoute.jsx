@@ -1,17 +1,21 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAppContext } from '../context/AppContext';
+// src/components/ProtectedRoute.jsx
+import { Navigate } from "react-router-dom";
+import useAppContext from "../context/AppContext";
 
 const ProtectedRoute = ({ children, role }) => {
-    const { currentUser } = useAppContext();
-    const navigate = useNavigate();
-    useEffect(() => {
-        if (!currentUser || currentUser.role !== role) {
-            navigate('/login', { replace: true });
-        }
-    }, [currentUser, navigate, role]);
+  const { currentUser } = useAppContext();
 
-    return (currentUser && currentUser.role === role) ? children : null;
+  if (!currentUser) {
+    // not logged in → go to login
+    return <Navigate to="/login" replace />;
+  }
+
+  if (role && currentUser.role !== role) {
+    // logged in but wrong role → go to home
+    return <Navigate to="/" replace />;
+  }
+
+  return children;
 };
 
 export default ProtectedRoute;

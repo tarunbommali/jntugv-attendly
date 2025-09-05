@@ -16,7 +16,7 @@ const RequestTable = ({ title, requests, onView, onAction, actionable }) => (
                     </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                    {requests.length > 0 ? requests.map(req => (
+                    {requests?.length > 0 ? requests.map(req => (
                         <tr key={req.id}>
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{req.requesterName}</td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{req.requesterDepartment}</td>
