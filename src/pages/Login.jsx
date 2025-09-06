@@ -81,7 +81,7 @@ const LoginForm = () => {
               setDepartment(e.target.value);
               setName("");
             }}
-            className="w-full border rounded-lg p-2 mt-1 focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-[#d8d8d8] rounded-lg p-2 mt-1 focus:ring-2 focus:ring-blue-500"
             required
           >
             <option value="">Select Department</option>
@@ -99,7 +99,7 @@ const LoginForm = () => {
           <select
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full border rounded-lg p-2 mt-1 focus:ring-2 focus:ring-blue-500"
+            className="w-full  border border-[#d8d8d8] rounded-lg p-2 mt-1 focus:ring-2 focus:ring-blue-500"
             required
           >
             <option value="">Select Name</option>
@@ -124,7 +124,7 @@ const LoginForm = () => {
               type={showPassword ? "text" : "password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full border rounded-lg p-2 pr-10 focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-[#d8d8d8] rounded-lg p-2 pr-10 focus:ring-2 focus:ring-blue-500"
               placeholder="Enter password"
               required
             />
