@@ -3,14 +3,13 @@ import useAppContext from "../../context/AppContext";
 import RequestTable from "../ui/RequestTable";
 import ActionModal from "../ui/ActionModal";
 import UserTable from "./UserTable";
-import CreateUserModal from "../ui/CreateUserModal";
-
+ 
 const HigherAuthorityDashboard = () => {
   const { currentUser, requests, viewRequest, handleConfirmAction } =
     useAppContext();
 
   const [selectedAction, setSelectedAction] = useState(null);
-  const [isCreateUserModalOpen, setIsCreateUserModalOpen] = useState(false);
+  // const [isCreateUserModalOpen, setIsCreateUserModalOpen] = useState(false);
 
   const dashboardTitle = `${currentUser?.role?.toUpperCase()} Dashboard`;
 
@@ -35,7 +34,7 @@ const HigherAuthorityDashboard = () => {
         {/* Registrar-only: Create User button */}
         {currentUser?.role === "registrar" && (
           <button
-            onClick={() => setIsCreateUserModalOpen(true)}
+            onClick={() => alert("Create User Modal Open")}
             className="bg-indigo-600 text-white px-4 py-2 rounded-md"
           >
             + Create User
@@ -67,10 +66,10 @@ const HigherAuthorityDashboard = () => {
       />
 
       {/* Modal for Create User */}
-      <CreateUserModal
+      {/* <CreateUserModal
         isOpen={isCreateUserModalOpen}
         onClose={() => setIsCreateUserModalOpen(false)}
-      />
+      /> */}
     </div>
   );
 };

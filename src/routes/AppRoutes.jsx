@@ -5,8 +5,6 @@ import LoginPage from "../pages/Login";
 import HomePage from "../pages/HomePage";
 import DashboardLayout from "../pages/DashboardLayout";
 import ProtectedRoute from "./ProtectedRoute";
-import NotFoundPage from "../components/NotFound";
-import CreateUserPage from "../components/CreateUserPage";
 import { dashboardRoutes } from "../utils/dashboardRoutes";
 
 function AppRoutes() {
