@@ -164,18 +164,6 @@ const UserTable = () => {
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Role
               </th>
-              <th
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
-                onClick={() => requestSort("rating")}
-              >
-                Rating {renderSortArrow("rating")}
-              </th>
-              <th
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
-                onClick={() => requestSort("experience")}
-              >
-                Experience (Years) {renderSortArrow("experience")}
-              </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Actions
               </th>
@@ -206,12 +194,7 @@ const UserTable = () => {
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 capitalize">
                       {u.role}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {u.rating}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {experience} yrs
-                    </td>
+                    
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
                       <a
                         href={u.emailLink}

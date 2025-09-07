@@ -11,10 +11,8 @@ export const DUMMY_USERS = [
     assignedHod: "hod01",
     password: "faculty123",
     profilePic: "https://cdn-icons-png.flaticon.com/512/8608/8608769.png",
-    dateOfJoining: "2020-06-10",
     place: "Vizianagaram",
-    rating: "4.2 / 5",
-    linkedin: "https://linkedin.com/in/placeholder",
+
     whatsapp: "https://wa.me/910000000001",
     emailLink: "mailto:priya.sharma@jntugv.edu",
   },
@@ -30,10 +28,9 @@ export const DUMMY_USERS = [
     assignedHod: "hod02",
     password: "faculty456",
     profilePic: "https://cdn-icons-png.flaticon.com/512/8608/8608769.png",
-    dateOfJoining: "2021-01-15",
+
     place: "Hyderabad",
-    rating: "4.0 / 5",
-    linkedin: "https://linkedin.com/in/placeholder",
+
     whatsapp: "https://wa.me/910000000002",
     emailLink: "mailto:rajesh.kumar@jntugv.edu",
   },
@@ -48,10 +45,9 @@ export const DUMMY_USERS = [
     department: "IT",
     password: "hod123",
     profilePic: "https://cdn-icons-png.flaticon.com/512/8608/8608769.png",
-    dateOfJoining: "2015-08-20",
+
     place: "Vizianagaram",
-    rating: "4.5 / 5",
-    linkedin: "https://linkedin.com/in/placeholder",
+
     whatsapp: "https://wa.me/910000000003",
     emailLink: "mailto:bindumadhuri@jntugv.edu",
   },
@@ -66,10 +62,9 @@ export const DUMMY_USERS = [
     department: "Administration",
     password: "principal123",
     profilePic: "https://cdn-icons-png.flaticon.com/512/8608/8608769.png",
-    dateOfJoining: "2010-03-12",
+
     place: "Vizianagaram",
-    rating: "4.7 / 5",
-    linkedin: "https://linkedin.com/in/placeholder",
+
     whatsapp: "https://wa.me/910000000004",
     emailLink: "mailto:principal@jntugv.edu",
   },
@@ -83,11 +78,10 @@ export const DUMMY_USERS = [
     qualification: "Ph.D",
     department: "Administration",
     password: "registrar123",
-    profilePic: "https://jntugv.edu.in/static/media/registrar.25e0843f00d08ee20077.jpeg",
-    dateOfJoining: "2012-09-05",
+    profilePic:
+      "https://jntugv.edu.in/static/media/registrar.25e0843f00d08ee20077.jpeg",
+
     place: "Vizianagaram",
-    rating: "4.6 / 5",
-    linkedin: "https://linkedin.com/in/placeholder",
     whatsapp: "https://wa.me/910000000005",
     emailLink: "mailto:registrar@jntugv.edu",
   },
@@ -102,10 +96,7 @@ export const DUMMY_USERS = [
     department: "Administration",
     password: "admin123",
     profilePic: "https://cdn-icons-png.flaticon.com/512/8608/8608769.png",
-    dateOfJoining: "2022-01-01",
     place: "Hyderabad",
-    rating: "N/A",
-    linkedin: "https://linkedin.com/in/placeholder",
     whatsapp: "https://wa.me/910000000006",
     emailLink: "mailto:systemadmin@jntugv.edu",
   },
